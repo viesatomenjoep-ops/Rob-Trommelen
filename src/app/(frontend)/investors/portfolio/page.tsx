@@ -1,4 +1,4 @@
-import { getInvestmentProperties } from '@/app/actions/property'
+import { getPublicProperties } from '@/app/actions/property'
 import Link from 'next/link'
 import { Lock } from 'lucide-react'
 
@@ -9,7 +9,7 @@ export default async function PrivatePortfolioPage() {
   let errorMsg = null;
 
   try {
-    properties = await getInvestmentProperties() || [];
+    properties = await getPublicProperties() || [];
   } catch (error: any) {
     errorMsg = error.message;
   }
